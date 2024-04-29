@@ -9,7 +9,7 @@ namespace ExpenseTracker.Models
 		public int CategoryId { get; set; }
 
 		[Column(TypeName = "nvarchar(50)")]
-		public string Tittle { get; set; }
+		public string Title { get; set; }
 
 		[Column(TypeName = "nvarchar(5)")]
 		public string Icon { get; set; } = "";
