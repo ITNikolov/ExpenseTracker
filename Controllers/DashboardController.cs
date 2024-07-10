@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.JSInterop.Implementation;
+using System.Globalization;
 
 namespace ExpenseTracker.Controllers
 {
@@ -40,7 +41,9 @@ namespace ExpenseTracker.Controllers
 
 			//Balance
 			int Balance = TotalIncome - TotalExpense;
-			ViewBag.Balance = Balance.ToString("C0");
+			CultureInfo culture = CultureInfo.CreateSpecificCulture("bg-BGN");
+			culture.NumberFormat.CurrencyNegativePattern = 1;
+			ViewBag.Balance = String.Format(culture,"{0:C0}",Balance);
 
 			return View();
 		}

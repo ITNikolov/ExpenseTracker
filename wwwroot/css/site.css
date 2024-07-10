@@ -36,6 +36,7 @@ body {
     margin-left: 290px
 }
 
+
 /*BreadCrumb*/
 .e-breadcrumb a, .e-breadcrumb a:hover {
     text-decoration: none !important;
@@ -106,3 +107,31 @@ e.grid e.gridheader {
     border-radius: 1rem;
     background-color: #1a222b;
 }
+
+    .widget.summary > div:first-child {
+        background-color: #222b33;
+        padding: 1rem;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+    }
+
+        .widget.summary > div:first-child i {
+            font-weight: bold;
+        }
+
+
+    .widget.income > div:first-child {
+        color: #4cff00
+    }
+
+    .widget.expense > div:first-child {
+        color: #ff0000
+    }
+
+    .widget.balance > div:first-child {
+        color: #258cfb
+    }
+
+    .widget.chart {
+        padding: 5px;
+    }
