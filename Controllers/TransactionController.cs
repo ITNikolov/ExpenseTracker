@@ -56,9 +56,9 @@ namespace ExpenseTracker.Controllers
 				else
 				{
 					_context.Update(transaction);
-					await _context.SaveChangesAsync();
-					return RedirectToAction(nameof(Index));
-				}	
+				}
+				await _context.SaveChangesAsync();
+				return RedirectToAction(nameof(Index));
 			}
 			PopulateCategories();
 			return View(transaction);

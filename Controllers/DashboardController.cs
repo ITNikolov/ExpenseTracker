@@ -41,9 +41,22 @@ namespace ExpenseTracker.Controllers
 
 			//Balance
 			int Balance = TotalIncome - TotalExpense;
-			CultureInfo culture = CultureInfo.CreateSpecificCulture("bg-BGN");
+			CultureInfo culture = CultureInfo.CreateSpecificCulture("en-USD");
 			culture.NumberFormat.CurrencyNegativePattern = 1;
 			ViewBag.Balance = String.Format(culture,"{0:C0}",Balance);
+
+			//Dougahnut Chart - Expense by Category
+			ViewBag.DoughnutChartData = SelectedTransaction
+				.Where(i => i.Category.Type == "Expense")
+				.GroupBy(j => j.Category.CategoryId)
+				.Select(k => new
+				{
+					categoryTittleWithIcon = k.First().Category.Icon+" "+ k.First().Category.Title,
+					amount = k.Sum(j => j.Amount),
+					formattedAmount = k.Sum(j => j.Amount).ToString("C0"),
+				})
+				.ToList();
+
 
 			return View();
 		}
