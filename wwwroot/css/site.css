@@ -72,6 +72,33 @@ e.grid e.gridheader {
     padding: 10px;
     background-color: #222b33;
 }
+
+/*Navbar*/
+nav.navbar {
+    backaground-color: rgba(18,22,29);
+}
+
+    nav.navbar i {
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+        nav.navbar i:hover, nav.navbar img:hover {
+            cursor: pointer;
+            background-color: #48645f14;
+            transform: scale(1.05) translateZ(0px);
+        }
+
+/*Profile pic*/
+img.profile-pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+
 /*Radio Button Group*/
 
 .e-btn-group.custom-rbt-group {
